@@ -10,6 +10,29 @@ def import_data(filename='albums_data.txt'):
     :returns: list of lists representing albums' data
     :rtype: list
     """
+    with open(filename) as f:
+        read_data = f.read()
+    
+    read_data = read_data.split("\n")
+    #print(read_data)
+
+    for i in range(0, len(read_data)):
+        read_data[i].split(",")
+
+    #poniżej jest kod kasujący puste linie które w tabeli były by jako ''
+    lines_do_delete = []
+    for i in range(0,len(read_data)):
+        if read_data[i] == '':
+            lines_do_delete.append(i)
+
+    for i in range(len(lines_do_delete), 0, -1):
+        read_data.pop(lines_do_delete[i-1])
+
+    return read_data
+        
+
+
+import_data('albums_data.txt')
 
 def export_data(albums, filename='albums_data.txt', mode='a'):
     """
