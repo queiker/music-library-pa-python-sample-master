@@ -10,7 +10,7 @@ def import_data(filename='albums_data.txt'):
     :returns: list of lists representing albums' data
     :rtype: list
     """
-    with open(filename) as f:
+    with open(filename,"r") as f:
         read_data = f.read()
     
     read_data = read_data.split("\n")
@@ -31,8 +31,8 @@ def import_data(filename='albums_data.txt'):
     return read_data
         
 
-
-import_data('albums_data.txt')
+#Poniżej kod testujący funkcję import_data
+#print(import_data('albums_data.txt') )
 
 def export_data(albums, filename='albums_data.txt', mode='a'):
     """
@@ -47,4 +47,23 @@ def export_data(albums, filename='albums_data.txt', mode='a'):
     :raises ValueError: if mode other than 'w' or 'a' was given. Error message:
         'Wrong write mode'
     """
+
+    if mode == 'a':
+        existing_albums = import_data(filename)
+        
+        for iterate in range(0, len(albums)):
+            existing_albums.append(albums[iterate])
+        albums = existing_albums
+
+    elif mode == "w":
+        pass
+    else:
+        raise ValueError
+    
+
+    print(albums)
+
+
+print(export_data([["YYYYYYYYYYYYYYYYYYYYYYYY", "Baby One More Time", "1999", "pop", "42:20"],["XXXXXXXXXXXXXXXXX", "Low", "1977", "rock", "38:26"] ], filename='albums_data.txt', mode='a') )
+
 
