@@ -18,7 +18,7 @@ def import_data(filename='albums_data.txt'):
 
     for i in range(0, len(read_data)):
         read_data[i].split(",")
-    print(read_data)
+    #print(read_data)
     #poniższy fragment kodu dzieli utwory na pojedyńcze treści z fragmentów:
     #'Pink Floyd,The Dark Side Of The Moon,1973,progressive rock,43:00' robi :
     #"Britney Spears", "Baby One More Time", "1999", "pop", "42:20"
@@ -35,7 +35,7 @@ def import_data(filename='albums_data.txt'):
         #     read_data[i][4] = str(read_data[i][4])
     
     
-    print(read_data)
+    #print(read_data)
 
     #poniżej jest kod kasujący puste linie które w tabeli były by jako ''
     lines_do_delete = []

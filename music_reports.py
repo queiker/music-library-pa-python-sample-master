@@ -8,6 +8,8 @@ def get_albums_by_genre(albums, genre):
     :returns: all albums of given genre
     :rtype: list
     """
+    # nie musi wyświetlać raportu od tego są funkcję display.
+    # genre to gatunek muzyczny
 
 
 def get_longest_album(albums):
