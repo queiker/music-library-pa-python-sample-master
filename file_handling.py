@@ -9,6 +9,7 @@ def import_data(filename='albums_data.txt'):
 
     :returns: list of lists representing albums' data
     :rtype: list
+    """
 
     with open(filename,"r") as f:
 
