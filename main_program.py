@@ -40,11 +40,12 @@ def main():
                 user_input = int(input(("Put number")))
                 if user_input == 0:
                     genre = input("Put genre :")
-                    display.print_albums_list(music_reports.get_albums_by_genre(albums, genre))
+                    albums_by_genre = music_reports.get_albums_by_genre(albums, genre)
+                    display.print_albums_list(albums_by_genre)
                 elif user_input == 1:
-                    display.print_albums_list(music_reports.get_longest_album(albums))
+                    display.print_albums_list([music_reports.get_longest_album(albums)])
                 elif user_input == 2:
-                    display.print_albums_list(music_reports.get_total_albums_length(albums))
+                    display.print_command_result(music_reports.get_total_albums_length(albums))
                 elif user_input == 3:
                     pass
 
