@@ -1,9 +1,11 @@
 """
 The main program should use functions from music_reports and display modules
 """
+
 import file_handling
 import display
 import music_reports
+
 
 def main():
     """
@@ -14,6 +16,7 @@ def main():
     You should create new functions and call them from main whenever it can
     make the code cleaner
     """
+
     albums = file_handling.import_data()
     
     #display.print_album_info(albums[0])
@@ -54,7 +57,6 @@ def main():
         
         elif user_input == 2:
             break
-
 
 
 if __name__ == '__main__':

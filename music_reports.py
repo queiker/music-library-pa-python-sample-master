@@ -1,5 +1,7 @@
+
 # poniższy import jest tylko do debugowania.
 #import file_handling
+
 
 def get_albums_by_genre(albums, genre):
     """
@@ -11,6 +13,7 @@ def get_albums_by_genre(albums, genre):
     :returns: all albums of given genre
     :rtype: list
     """
+
     # nie musi wyświetlać raportu od tego są funkcję display.
     # genre to gatunek muzyczny
     albums_to_return = []
@@ -23,6 +26,7 @@ def get_albums_by_genre(albums, genre):
 #genre = "rock"
 #print(get_albums_by_genre(file_handling.import_data( ), genre))
 
+
 def get_longest_album(albums):
     """
     Get album with biggest value in length field.
@@ -32,6 +36,7 @@ def get_longest_album(albums):
     :returns: longest album
     :rtype: list
     """
+
     # longest_album zawiera album oraz jego długość w sekundach
     longest_album = [[],0]
 
@@ -51,6 +56,7 @@ def get_longest_album(albums):
 
 #print(get_longest_album(file_handling.import_data( )))
 
+
 def get_total_albums_length(albums):
     """
     Get sum of lengths of all albums in minutes, rounded to 2 decimal places
@@ -59,6 +65,7 @@ def get_total_albums_length(albums):
     :returns: total albums' length in minutes
     :rtype: float
     """
+
     sum_seconds = 0
     for iterate in range(0,len(albums)):
         time = albums[iterate][4].split(":")
@@ -69,3 +76,4 @@ def get_total_albums_length(albums):
     return str(to_return)
 
 #print(get_total_albums_length(file_handling.import_data( )))
+

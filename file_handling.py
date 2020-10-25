@@ -9,8 +9,9 @@ def import_data(filename='albums_data.txt'):
 
     :returns: list of lists representing albums' data
     :rtype: list
-    """
+
     with open(filename,"r") as f:
+
         read_data = f.read()
     
     read_data = read_data.split("\n")
@@ -18,6 +19,7 @@ def import_data(filename='albums_data.txt'):
 
     for i in range(0, len(read_data)):
         read_data[i].split(",")
+
     #print(read_data)
     #poniższy fragment kodu dzieli utwory na pojedyńcze treści z fragmentów:
     #'Pink Floyd,The Dark Side Of The Moon,1973,progressive rock,43:00' robi :
@@ -40,7 +42,9 @@ def import_data(filename='albums_data.txt'):
     #poniżej jest kod kasujący puste linie które w tabeli były by jako ''
     lines_do_delete = []
     for i in range(0,len(read_data)):
+
         if read_data[i] == ['']:
+
             lines_do_delete.append(i)
 
     for i in range(len(lines_do_delete), 0, -1):
@@ -49,10 +53,12 @@ def import_data(filename='albums_data.txt'):
     return read_data
         
 
+
 #Poniżej kod testujący funkcję import_data
 #print(import_data('albums_data.txt') )
 
 #import_data('albums_data.txt')
+
 
 def export_data(albums, filename='albums_data.txt', mode='a'):
     """
@@ -67,6 +73,7 @@ def export_data(albums, filename='albums_data.txt', mode='a'):
     :raises ValueError: if mode other than 'w' or 'a' was given. Error message:
         'Wrong write mode'
     """
+
 
     if mode == 'a':
         existing_albums = import_data(filename)
@@ -96,3 +103,4 @@ def export_data(albums, filename='albums_data.txt', mode='a'):
 #print(export_data([["YYYYYYYYYYYYYYYYYYYYYYYY", "Baby One More Time", "1999", "pop", "42:20"],["XXXXXXXXXXXXXXXXX", "Low", "1977", "rock", "38:26"] ], filename='albums_data.txt', mode='a') )
 
 #print(export_data([["HIHI HEY HEY", "Baby One More Time", "1999", "pop", "42:20"]], filename='albums_data.txt', mode='a') )
+
